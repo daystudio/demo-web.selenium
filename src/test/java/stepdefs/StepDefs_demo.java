@@ -26,7 +26,7 @@ public class StepDefs_demo {
 	}
 
 	@When("I open demo.reactjs")
-	public void i_open_Google_Homepage() {
+	public void i_open_demo() {
 		System.out.println("--> Open demo.reactjs");
 		driver = new ChromeDriver(options);
 		driver.get("http://demo.reactjs.ckchan.hk/");
@@ -39,7 +39,7 @@ public class StepDefs_demo {
 	}
 
 	@Then("I check list count on demo.reactjs")
-	public void i_search_selenium_webdriver_on_Google() {
+	public void i_search_list_count() {
 		System.out.println("--> Check has list:" + (driver.findElement(By.id("list")).getAttribute("class").length() > 0));
 		System.out.println("--> Check list count:" + driver.findElements(By.xpath("//*[@id=\"list\"]/div")).size());
 		List<WebElement> lst = driver.findElements(By.xpath("//*[@class=\"MuiTypography-root MuiCardHeader-title MuiTypography-body2 MuiTypography-displayBlock\"]"));
@@ -51,14 +51,14 @@ public class StepDefs_demo {
 	}
 
 	@Then("check the add function")
-	public void check_the_search_result_stats() {
+	public void check_the_add_function() {
 		driver.findElement(By.id("add")).click();
 		try {
 			Thread.sleep(1500);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("--> has add button:" + (driver.findElement(By.xpath("//*[@class=\"MuiDialog-root\"]")).getLocation() != null));
+		System.out.println("--> has add function:" + (driver.findElement(By.xpath("//*[@class=\"MuiDialog-root\"]")).getLocation() != null));
 		assert(driver.findElement(By.xpath("//*[@class=\"MuiDialog-root\"]")).getLocation() != null);
 		driver.close();
 	}
